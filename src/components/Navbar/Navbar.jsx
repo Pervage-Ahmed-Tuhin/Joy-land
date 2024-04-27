@@ -76,7 +76,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl md:text-3xl text-[#00BFA6] bg-base-200 font-bold mr-3">
+                    <a className="btn btn-ghost  text-base md:text-3xl text-[#00BFA6] bg-base-200 font-bold mr-3">
 
 
                         <Typewriter
