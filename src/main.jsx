@@ -14,6 +14,8 @@ import AuthProvider from './components/Authprovider/AuthProvider.jsx';
 import AllTourist from './components/AllTouristSpot/AllTourist.jsx';
 import AddTouristSpot from './components/AddTouristSpot/AddTouristSpot.jsx';
 import MyList from './components/Mylist/MyList.jsx';
+import Login from './components/Login/Login.jsx';
+import Register from './components/Register/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: '/myList',
         element: <MyList></MyList>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
 

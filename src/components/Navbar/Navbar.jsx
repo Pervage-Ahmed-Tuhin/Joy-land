@@ -34,6 +34,7 @@ const Navbar = () => {
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/allTourist'>All Tourists Spot</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/addTourist'>Add Tourists Spot</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/myList'>MY List</NavLink></li>
+        <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/login'>Log in</NavLink></li>
 
 
     </>
