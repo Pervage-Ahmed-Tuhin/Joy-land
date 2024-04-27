@@ -29,7 +29,8 @@ const pageTransition = {
 
 
 const Navbar = () => {
-    const { user, LogOutUser } = useContext(AuthContext);
+    const { user, LogOutUser,infoHolder } = useContext(AuthContext);
+    // console.log(user.displayName,infoHolder);
 
     const links = <>
 
@@ -37,7 +38,6 @@ const Navbar = () => {
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/allTourist'>All Tourists Spot</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/addTourist'>Add Tourists Spot</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/myList'>MY List</NavLink></li>
-        <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/login'>Log in</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/updateProfile'>Update</NavLink></li>
 
 
@@ -76,7 +76,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl md:text-2xl text-[#00BFA6] bg-base-200 font-bold mr-3">
+                    <a className="btn btn-ghost text-2xl md:text-3xl text-[#00BFA6] bg-base-200 font-bold mr-3">
 
 
                         <Typewriter
@@ -100,7 +100,7 @@ const Navbar = () => {
 
                     {
                         user ? <div className="flex ml-4 md:ml-0 items-center gap-5">
-                            <img title={user.displayName} className="rounded-full w-[20%]" src={user.photoURL
+                            <img title={infoHolder.name} className="rounded-full w-[20%]" src={infoHolder.photoURL
                             } alt="You" /><button onClick={handleLogout} className="btn bg-[#FE7A36] text-white">LogOut</button>
                         </div> : <Link to="/login">
                             <button className="btn bg-[#00BFA6] text-white">LogIn</button>

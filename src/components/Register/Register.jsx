@@ -35,6 +35,7 @@ const pageTransition = {
 };
 
 const Register = () => {
+    const [errorState, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, setInfoHolder, UpdateUserProfile } = useContext(AuthContext);
@@ -73,10 +74,26 @@ const Register = () => {
         console.log(data);
 
 
+        // createUser(email, password)
+        //     .then(res => {
+        //         setInfoHolder(data);
+        //         console.log(res.user);
+        //         toast(`Welcome! To Joy Land`, { autoClose: 4000 });
+        //         setTimeout(() => {
+        //             UpdateUserProfile(name, photoURL)
+        //                 .then(() => {
+        //                     setLoading(false);
+        //                     navigate('/')
+        //                 })
+
+        //         })
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     })
         createUser(email, password)
-            .then(res => {
+            .then(() => {
                 setInfoHolder(data);
-                console.log(res.user);
                 toast(`Welcome! To Joy Land`, { autoClose: 4000 });
                 setTimeout(() => {
                     UpdateUserProfile(name, photoURL)
@@ -86,10 +103,20 @@ const Register = () => {
                         })
 
                 })
-            })
+
+
+
+            }, 4000)
+
             .catch(error => {
+                setError(error);
+                console.log(errorState);
+                toast(`Error:${error.code.split('/')[1]}`, { type: 'error' });
+                setLoading(false);
+                navigate('/register');
                 console.log(error);
             })
+
 
     }
     const [Type, setType] = useState(false);
