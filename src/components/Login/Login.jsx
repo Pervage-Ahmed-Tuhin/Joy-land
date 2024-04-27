@@ -1,5 +1,4 @@
 
-import wave from '../../assets/img/Wave.svg';
 import wave2 from '../../assets/img/Abstract Paper (2).svg';
 import unlock2 from '../../assets/img/unlock.svg';
 import Marquee from "react-fast-marquee";
@@ -65,9 +64,9 @@ const Login = () => {
                     <img src={avatar1} className="w-32" />
 
                     <h2
-                        className="my-8 font-play-fare font-bold text-3xl text-gray-700 text-center"
+                        className="my-8 font-play-fare font-bold text-3xl text-gray-800 text-center"
                     >
-                        Welcome to <span className='text-[#f9a826]'>Joy Land</span>
+                        Welcome to <br /> <span className='text-[#f9a826]'>Joy Land</span>
                     </h2>
                     <div className="relative flex items-center">
                         <FaUser />
