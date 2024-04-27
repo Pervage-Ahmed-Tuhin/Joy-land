@@ -1,0 +1,49 @@
+.slide {
+
+
+    color: rgba(44, 44, 229);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/b6F1kpM/bandarban.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/vxy30nM/angkor-wat-temple.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/37kyG2v/temple-borodudpur.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-4 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/nrZXCjx/kuala-lumpur.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-5 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/1QLGNhB/bankok.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-6 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/rsqRbKz/ha-long.jpg');
+    background-size: cover;
+    background-position: center;
+}
