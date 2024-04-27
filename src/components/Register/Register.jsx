@@ -8,8 +8,8 @@ import avatar1 from '../../assets/img/avatar.svg';
 import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { IoIosEye } from "react-icons/io";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import Loader from "../Loader/Loader";
@@ -35,6 +35,10 @@ const pageTransition = {
 };
 
 const Register = () => {
+    const [Type, setType] = useState(false);
+    useEffect(() => {
+        document.title = "Joy Land|Register";
+    }, [])
     const [errorState, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -74,30 +78,16 @@ const Register = () => {
         console.log(data);
 
 
-        // createUser(email, password)
-        //     .then(res => {
-        //         setInfoHolder(data);
-        //         console.log(res.user);
-        //         toast(`Welcome! To Joy Land`, { autoClose: 4000 });
-        //         setTimeout(() => {
-        //             UpdateUserProfile(name, photoURL)
-        //                 .then(() => {
-        //                     setLoading(false);
-        //                     navigate('/')
-        //                 })
 
-        //         })
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
         createUser(email, password)
             .then(() => {
                 setInfoHolder(data);
-                toast(`Welcome! To Joy Land`, { autoClose: 4000 });
+                toast.success(`Welcome! To Joy Land`, { autoClose: 4000 });
                 setTimeout(() => {
+
                     UpdateUserProfile(name, photoURL)
                         .then(() => {
+
                             setLoading(false);
                             navigate('/')
                         })
@@ -105,13 +95,12 @@ const Register = () => {
                 })
 
 
-
             }, 4000)
 
             .catch(error => {
                 setError(error);
                 console.log(errorState);
-                toast(`Error:${error.code.split('/')[1]}`, { type: 'error' });
+                toast.error(`Error:${error.code.split('/')[1]}`, { type: 'error' });
                 setLoading(false);
                 navigate('/register');
                 console.log(error);
@@ -119,10 +108,7 @@ const Register = () => {
 
 
     }
-    const [Type, setType] = useState(false);
-    useEffect(() => {
-        document.title = "Joy Land|Register";
-    }, [])
+
 
     return (
         <div>
@@ -181,13 +167,13 @@ const Register = () => {
                             <a href="#" className="mt-4 text-gray-800 font-bold">Have an account? <Link to='/login'>Log In</Link></a>
                             <button type="submit" className="py-3 px-20 bg-[#f9a826] rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500">Register</button>
                         </form>
-                        <ToastContainer></ToastContainer>
+
                     </div>
 
                 </motion.div>
             }
 
-
+            <ToastContainer />
         </div>
 
     );

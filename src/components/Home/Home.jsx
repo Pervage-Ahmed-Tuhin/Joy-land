@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { motion } from "framer-motion";
+import Loader from "../Loader/Loader";
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -25,19 +27,41 @@ const pageTransition = {
 
 
 const Home = () => {
+
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        document.title = "T-Zone|Home";
+    }, [])
+
+    useEffect(() => {
+        const delay = setTimeout(() => {
+            setLoading(false);
+        }, 1000)
+        return () => clearTimeout(delay);
+    }, [])
+
+
     return (
-        <motion.div
+        <div>
+            {loading && <Loader></Loader>}
+            {!loading &&
 
-            initial="initial"
-            animate="in"
-            exit="out"
-            variants={pageVariants}
-            transition={pageTransition}
+                <motion.div
+
+                    initial="initial"
+                    animate="in"
+                    exit="out"
+                    variants={pageVariants}
+                    transition={pageTransition}
 
 
-        >
-            <Banner></Banner>
-        </motion.div>
+                >
+                    <Banner></Banner>
+                </motion.div>
+
+            }
+        </div>
+
     );
 };
 

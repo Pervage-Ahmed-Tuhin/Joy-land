@@ -101,7 +101,7 @@ const Navbar = () => {
                     {
                         user ? <div className="flex ml-4 md:ml-0 items-center gap-5">
                             <img title={infoHolder.name} className="rounded-full w-[20%]" src={infoHolder.photoURL
-                            } alt="You" /><button onClick={handleLogout} className="btn bg-[#FE7A36] text-white">LogOut</button>
+                            } alt="You" /><button onClick={handleLogout} className="btn bg-[#00BFA6] text-white">LogOut</button>
                         </div> : <Link to="/login">
                             <button className="btn bg-[#00BFA6] text-white">LogIn</button>
                         </Link>
