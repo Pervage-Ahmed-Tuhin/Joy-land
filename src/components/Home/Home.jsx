@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Loader from "../Loader/Loader";
 
 import { useLoaderData } from "react-router-dom";
+import TouristSpot from "../ToristSpots/TouristSpot";
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -63,9 +64,25 @@ const Home = () => {
                 >
                     <Banner></Banner>
 
-                    <div>
+                    <div className="max-w-6xl mx-auto">
 
-                    
+                        <h1 className="text-3xl font-play-fare font-bold text-center mt-9">Tourist Spots</h1>
+                        <div className="divider"></div>
+                        <p className="text-xl font-play-fare text-gray-400 text-center mt-4 mb-5">A tourist spot is a location or destination that <br /> attracts visitors from around the world due to its unique features, <br /> cultural significance, natural beauty, historical importance, or recreational opportunities. </p>
+
+
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                            {
+                                loadedData.slice(0, 12).map(data => <TouristSpot key={data._id}
+                                    data={data}
+                                ></TouristSpot>)
+                            }
+
+
+                        </div>
+
 
                     </div>
 
