@@ -33,7 +33,9 @@ const pageTransition = {
     duration: 0.9
 };
 const AddTouristSpot = () => {
-
+    useEffect(() => {
+        document.title = "Joy land|add Tourist page";
+    }, [])
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

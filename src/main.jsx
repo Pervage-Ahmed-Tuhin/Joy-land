@@ -34,7 +34,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/allTourist',
-        element: <AllTourist></AllTourist>
+        element: <AllTourist></AllTourist>,
+        loader: () => fetch('http://localhost:5000/tourists')
       },
       {
         path: '/addTourist',

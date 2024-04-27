@@ -36,7 +36,7 @@ const Home = () => {
 
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        document.title = "T-Zone|Home";
+        document.title = "Joy land|Home";
     }, [])
 
     useEffect(() => {
