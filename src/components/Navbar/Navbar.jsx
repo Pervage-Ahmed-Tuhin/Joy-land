@@ -29,8 +29,7 @@ const pageTransition = {
 
 
 const Navbar = () => {
-    const { user, LogOutUser,infoHolder } = useContext(AuthContext);
-    // console.log(user.displayName,infoHolder);
+    const { user, LogOutUser } = useContext(AuthContext);
 
     const links = <>
 
@@ -100,7 +99,7 @@ const Navbar = () => {
 
                     {
                         user ? <div className="flex ml-4 md:ml-0 items-center gap-5">
-                            <img title={infoHolder.name} className="rounded-full w-[20%]" src={infoHolder.photoURL
+                            <img title={user.displayName} className="rounded-full w-[20%]" src={user.photoURL
                             } alt="You" /><button onClick={handleLogout} className="btn bg-[#00BFA6] text-white">LogOut</button>
                         </div> : <Link to="/login">
                             <button className="btn bg-[#00BFA6] text-white">LogIn</button>

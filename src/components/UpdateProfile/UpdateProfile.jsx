@@ -10,7 +10,7 @@ import { MdAddAPhoto } from "react-icons/md";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import Loader from '../Loader/Loader';
-import { FaLock, FaUser } from 'react-icons/fa';
+import {  FaUser } from 'react-icons/fa';
 
 const pageVariants = {
     initial: {
@@ -38,9 +38,9 @@ const pageTransition = {
 const UpdateProfile = () => {
 
     const [loading, setLoading] = useState(true);
-    const { UpdateUserProfile, infoHolder, setInfoHolder } = useContext(AuthContext);
+    const { UpdateUserProfile, infoHolder, setInfoHolder, user } = useContext(AuthContext);
     console.log(infoHolder);
-    const { email, name, photoURL, password } = infoHolder;
+    // const { email, name, photoURL, password } = infoHolder;
     const navigate = useNavigate();
     useEffect(() => {
         document.title = "Joy Land|UpdateProfile";
@@ -100,7 +100,7 @@ const UpdateProfile = () => {
                                 <FaUser />
                                 <input
                                     type="text"
-                                    placeholder="Name"
+                                    placeholder="Name" defaultValue={user.displayName}
                                     {...register("name", { required: true })}
                                     className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6]transition-all duration-500 capitalize text-lg"
                                 />
@@ -110,7 +110,7 @@ const UpdateProfile = () => {
                                 <MdAddAPhoto />
                                 <input
                                     type="text"
-                                    placeholder="photoURL"
+                                    placeholder="photoURL" defaultValue={user.photoURL}
                                     {...register("photoURL", { required: true })}
                                     className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500 capitalize text-lg"
                                 />

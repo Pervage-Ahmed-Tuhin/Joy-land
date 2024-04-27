@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { motion } from "framer-motion";
 import Loader from "../Loader/Loader";
+
+import { useLoaderData } from "react-router-dom";
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -27,6 +29,9 @@ const pageTransition = {
 
 
 const Home = () => {
+
+    const loadedData = useLoaderData();
+    console.log(loadedData);
 
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -57,6 +62,13 @@ const Home = () => {
 
                 >
                     <Banner></Banner>
+
+                    <div>
+
+                    
+
+                    </div>
+
                 </motion.div>
 
             }
