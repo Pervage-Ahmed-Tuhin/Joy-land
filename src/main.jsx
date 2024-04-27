@@ -17,6 +17,7 @@ import MyList from './components/Mylist/MyList.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import UpdateProfile from './components/UpdateProfile/UpdateProfile.jsx';
 
 
 const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/updateProfile',
+        element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
       }
     ]
 

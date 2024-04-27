@@ -38,6 +38,7 @@ const Navbar = () => {
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/addTourist'>Add Tourists Spot</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/myList'>MY List</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/login'>Log in</NavLink></li>
+        <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/updateProfile'>Update</NavLink></li>
 
 
     </>
@@ -75,7 +76,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl md:text-3xl text-[#00BFA6] bg-base-200 font-bold">
+                    <a className="btn btn-ghost text-2xl md:text-2xl text-[#00BFA6] bg-base-200 font-bold mr-3">
 
 
                         <Typewriter
