@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { AuthContext } from "../Authprovider/AuthProvider";
 
 const pageVariants = {
     initial: {
@@ -27,6 +29,7 @@ const pageTransition = {
 
 
 const Navbar = () => {
+    const { user, LogOutUser } = useContext(AuthContext);
 
     const links = <>
 
@@ -38,6 +41,16 @@ const Navbar = () => {
 
 
     </>
+
+    const handleLogout = () => {
+        LogOutUser()
+            .then(result => {
+                console.log("Signed out Successfully", result);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     return (
 
@@ -83,15 +96,15 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* 
+
                     {
                         user ? <div className="flex ml-4 md:ml-0 items-center gap-5">
                             <img title={user.displayName} className="rounded-full w-[20%]" src={user.photoURL
                             } alt="You" /><button onClick={handleLogout} className="btn bg-[#FE7A36] text-white">LogOut</button>
                         </div> : <Link to="/login">
-                            <button className="btn bg-[#FE7A36] text-white">LogIn</button>
+                            <button className="btn bg-[#00BFA6] text-white">LogIn</button>
                         </Link>
-                    } */}
+                    }
 
                 </div>
             </div>
