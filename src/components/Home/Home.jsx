@@ -5,6 +5,10 @@ import Loader from "../Loader/Loader";
 
 import { useLoaderData } from "react-router-dom";
 import TouristSpot from "../ToristSpots/TouristSpot";
+import Questions from "../FreqentlyAskedQuestions/Questions";
+import HappyClients from "../HappyClients/HappyClients";
+import { Typewriter } from "react-simple-typewriter";
+import OurTeam from "../OurTeam/OurTeam";
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -66,7 +70,20 @@ const Home = () => {
 
                     <div className="max-w-6xl mx-auto">
 
-                        <h1 className="text-3xl font-play-fare font-bold text-center mt-9">Tourist Spots</h1>
+                        <h1 className="text-3xl font-play-fare font-bold text-center mt-9">
+
+
+                            <Typewriter
+                                loop
+                                cursor
+                                cursorStyle='_'
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={2000}
+                                words={['Tourist Spots🗺']}
+                            />
+
+                        </h1>
                         <div className="divider"></div>
                         <p className="text-xl font-play-fare text-gray-400 text-center mt-4 mb-5">A tourist spot is a location or destination that <br /> attracts visitors from around the world due to its unique features, <br /> cultural significance, natural beauty, historical importance, or recreational opportunities. </p>
 
@@ -82,7 +99,11 @@ const Home = () => {
 
 
                         </div>
+                        <Questions></Questions>
 
+                        <HappyClients></HappyClients>
+
+                        <OurTeam></OurTeam>
 
                     </div>
 
