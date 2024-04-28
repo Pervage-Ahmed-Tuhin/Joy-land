@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 import wave2 from '../../assets/img/Moon.svg';
 import { motion } from "framer-motion";
 
 import Loader from "../Loader/Loader";
+import { Link } from "react-router-dom";
 
 
 const pageVariants = {
@@ -32,7 +33,7 @@ const pageTransition = {
 
 
 const MyList = () => {
-    // fetch(`http://localhost:5000/tourists/email/${params.email}`)
+
     const { user } = useContext(AuthContext);
     useEffect(() => {
         document.title = "Joy land|My List";
@@ -46,8 +47,8 @@ const MyList = () => {
         return () => clearTimeout(delay);
     }, [])
 
-    
-    const [data, setData] = useState(null);
+
+    const [userData, setData] = useState(null);
 
     useEffect(() => {
         if (user) {
@@ -66,6 +67,42 @@ const MyList = () => {
             setLoading(false);
         }
     }, [user]);
+
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+
+                fetch(`http://localhost:5000/tourists/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Coffee has been deleted.',
+                                'success'
+                            )
+
+                            setData(prevData => prevData.filter(item => item._id !== _id));
+                        }
+                    })
+
+            }
+        })
+    }
 
     return (
 
@@ -159,7 +196,7 @@ const MyList = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, index) => (
+                                {userData.map((item, index) => (
                                     <tr key={index}>
                                         <td>
                                             <div className="flex items-center gap-3">
@@ -187,8 +224,17 @@ const MyList = () => {
                                             <span className="text-sm md:text-lg font-play-fare">Travel Per Year : {item.totalVisitorsPerYear}</span>
                                         </td>
                                         <th className="space-y-4">
-                                            <button className="btn  text-black btn-sm w-full outline-none bg-white">Update</button>
-                                            <button className="btn text-black btn-sm w-full outline-none bg-white">Delete</button>
+                                            <Link to={`/updateDataBase/${item._id}`}>
+
+                                                <button className="btn  text-black btn-sm w-full outline-none bg-white">Update</button>
+                                            </Link>
+
+
+                                            <button
+
+                                                onClick={() => handleDelete(item._id)}
+
+                                                className="btn text-black btn-sm w-full outline-none bg-white">Delete</button>
                                         </th>
                                     </tr>
                                 ))}

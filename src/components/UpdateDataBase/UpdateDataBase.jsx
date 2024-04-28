@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Loader from "../Loader/Loader";
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Authprovider/AuthProvider';
+import { useLoaderData } from 'react-router-dom';
 
 
 const pageVariants = {
@@ -31,9 +32,12 @@ const pageTransition = {
 };
 const UpdateDataBase = () => {
 
+    const loadedData = useLoaderData();
+    console.log(loadedData);
+    const { image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea } = loadedData;
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        document.title = "Joy land|add Tourist page";
+        document.title = "Joy land|Update Spots";
     }, [])
     const [loading, setLoading] = useState(true);
 
@@ -63,31 +67,32 @@ const UpdateDataBase = () => {
         const UserName = user.displayName;
         console.log(UserEmail, UserName);
 
-        const newSpot = { image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea, UserEmail, UserName };
-        // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
-        console.log(newSpot);
+        const updatedSpot = { image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea, UserEmail, UserName };
 
-        // fetch('http://localhost:5000/tourists', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newSpot)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Spot Added Successfully',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Cool'
-        //             })
-        //             form.reset();
-        //         }
-        //     })
-        // This part will be updated
+        console.log(updatedSpot);
+
+
+        fetch(`http://localhost:5000/tourists/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedSpot)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Tourist Spot Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+
+
 
     }
 
@@ -116,7 +121,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl">image</span>
                                     </label>
                                     <label className="input-group">
-                                        <input type="text" name="image" placeholder="image" className="input input-bordered w-full" />
+                                        <input defaultValue={image} type="text" name="image" placeholder="image" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                                 <div className="form-control">
@@ -124,7 +129,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl">tourists_spot_name</span>
                                     </label>
                                     <label className="input-group">
-                                        <input type="text" name="touristsSpotName" placeholder="tourists_spot_name" className="input input-bordered w-full" />
+                                        <input defaultValue={touristsSpotName} type="text" name="touristsSpotName" placeholder="tourists_spot_name" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                             </div>
@@ -135,7 +140,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl">country_Name</span>
                                     </label>
                                     <label className="input-group">
-                                        <input type="text" name="countryName" placeholder="country_Name" className="input input-bordered w-full" />
+                                        <input defaultValue={countryName} type="text" name="countryName" placeholder="country_Name" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                                 <div className="form-control">
@@ -143,7 +148,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl">location</span>
                                     </label>
                                     <label className="input-group">
-                                        <input type="text" name="location" placeholder="location" className="input input-bordered w-full" />
+                                        <input defaultValue={location} type="text" name="location" placeholder="location" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                             </div>
@@ -154,7 +159,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl">average_cost</span>
                                     </label>
                                     <label className="input-group ">
-                                        <input type="text" name="averageCost" placeholder="average_cost" className="input input-bordered w-full" />
+                                        <input defaultValue={averageCost} type="text" name="averageCost" placeholder="average_cost" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                                 <div className="form-control">
@@ -162,7 +167,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl"> seasonality</span>
                                     </label>
                                     <label className="input-group">
-                                        <input type="text" name="seasonality" placeholder=" seasonality" className="input input-bordered w-full" />
+                                        <input defaultValue={seasonality} type="text" name="seasonality" placeholder=" seasonality" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                             </div>
@@ -174,7 +179,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl">travel_time</span>
                                     </label>
                                     <label className="input-group ">
-                                        <input type="text" name="travelTime" placeholder="travel_time" className="input input-bordered w-full" />
+                                        <input defaultValue={travelTime} type="text" name="travelTime" placeholder="travel_time" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                                 <div className="form-control">
@@ -182,7 +187,7 @@ const UpdateDataBase = () => {
                                         <span className="label-text text-white text-xl"> totalVisitorsPerYear</span>
                                     </label>
                                     <label className="input-group">
-                                        <input type="text" name="totalVisitorsPerYear" placeholder=" totalVisitorsPerYear" className="input input-bordered w-full" />
+                                        <input defaultValue={totalVisitorsPerYear} type="text" name="totalVisitorsPerYear" placeholder=" totalVisitorsPerYear" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                             </div>
@@ -192,6 +197,7 @@ const UpdateDataBase = () => {
                             <textarea
                                 className="border rounded-md p-2 focus:outline-none focus:border-blue-500 w-full"
                                 name="textarea"
+                                defaultValue={textarea}
                                 id=""
                                 cols="30"
                                 rows="10"
