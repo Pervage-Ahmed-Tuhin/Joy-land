@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Loader from "../Loader/Loader";
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Authprovider/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 
 const pageVariants = {
@@ -31,6 +31,11 @@ const pageTransition = {
     duration: 0.9
 };
 const UpdateDataBase = () => {
+
+    const { id } = useParams();
+    console.log(id)
+
+    
 
     const loadedData = useLoaderData();
     console.log(loadedData);
@@ -63,16 +68,15 @@ const UpdateDataBase = () => {
         const travelTime = form.travelTime.value;
         const totalVisitorsPerYear = form.totalVisitorsPerYear.value;
         const textarea = form.textarea.value;
-        const UserEmail = user.email;
         const UserName = user.displayName;
-        console.log(UserEmail, UserName);
+        console.log(UserName);
 
-        const updatedSpot = { image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea, UserEmail, UserName };
+        const updatedSpot = { image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea, UserName };
 
         console.log(updatedSpot);
 
 
-        fetch(`http://localhost:5000/tourists/${_id}`, {
+        fetch(`http://localhost:5000/tourists/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
