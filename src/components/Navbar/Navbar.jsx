@@ -67,7 +67,7 @@ const Navbar = () => {
         localStorage.setItem('theme', theme);
         const localTheme = localStorage.getItem('theme');
         document.querySelector('html').setAttribute('data-theme', localTheme);
-    }, [theme])
+    }, [theme],)
 
     const handleToggle = e => {
         if (e.target.checked) {
@@ -102,7 +102,7 @@ const Navbar = () => {
 
 
                             <label htmlFor="Toggle2" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-800">
-                                
+
                                 <span className="text-sm md:text-2xl text-[#00BFA6]"><IoMdSunny /></span>
                                 <span className="relative">
                                     <input
@@ -113,7 +113,7 @@ const Navbar = () => {
                                     <div className="w-10 h-4 rounded-full shadow dark:bg-gray-400 peer-checked:dark:bg-gray-400"></div>
                                     <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto dark:bg-[#00BFA6]"></div>
                                 </span>
-                                <span className="text-sm md:text-2xl text-[#00BFA6]"><BsMoonStarsFill /></span>
+                                <span className="text-sm md:text-2xl text-[#00BFA6] mr-4"><BsMoonStarsFill /></span>
                             </label>
 
                         </ul>
@@ -174,14 +174,32 @@ const Navbar = () => {
 
 
 
-                    {
-                        user ? <div className="flex ml-4 md:ml-0 items-center gap-5">
-                            <img title={user.displayName} className="rounded-full w-[20%]" src={user.photoURL
-                            } alt="You" /><button onClick={handleLogout} className="btn bg-[#00BFA6] text-white">LogOut</button>
-                        </div> : <Link to="/login">
-                            <button className="btn bg-[#00BFA6] text-white btn-sm">LogIn</button>
-                        </Link>
-                    }
+                    
+
+                    {user ? (
+                        <div className="flex ml-4 md:ml-0 items-center gap-5">
+                            <img
+                                title={user.displayName}
+                                className="rounded-full w-[20%] ml-3"
+                                src={user.photoURL}
+                                
+                                alt="You"
+                            />
+                            <button onClick={handleLogout} className="btn bg-[#00BFA6] text-white">
+                                LogOut
+                            </button>
+                        </div>
+                    ) : (
+                        <div>
+                            <Link to="/login">
+                                <button className="btn bg-[#00BFA6] text-white btn-sm">LogIn</button>
+                            </Link>
+                            <Link to="/register">
+                                <button className="btn bg-[#00BFA6] text-white btn-sm">Register</button>
+                            </Link>
+                        </div>
+                    )}
+
 
                 </div>
             </div>

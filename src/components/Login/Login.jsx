@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import wave2 from '../../assets/img/Abstract Paper (2).svg';
-import unlock2 from '../../assets/img/unlock.svg';
+import unlock2 from '../../assets/img/undraw_secure_login_pdn4.svg';
 import Marquee from "react-fast-marquee";
-import avatar1 from '../../assets/img/avatar.svg';
+import avatar1 from '../../assets/img/avatar1.svg';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -131,7 +131,7 @@ const Login = () => {
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center w-1/2">
                             <img src={avatar1} className="w-32" />
                             <h2 className="my-8 font-play-fare font-bold text-3xl text-gray-800 text-center">
-                                Welcome to <br /> <span className='text-[#f9a826]'>Joy Land</span>
+                                Welcome to <br /> <span className='text-gray-800'>Joy Land</span>
                             </h2>
                             <div className="relative flex items-center">
                                 <FaUser />
@@ -154,15 +154,15 @@ const Login = () => {
                                 {errors.password && <span className="text-red-500">This field is required</span>}
                             </div>
                             <div className="flex justify-center mt-4 mb-4 gap-4">
-                                <button onClick={handleGoogleLogin} className="bg-[#f9a826] text-2xl px-4 rounded-lg btn"><FaGoogle /></button>
-                                <button onClick={handleGithubLogin} className="bg-[#f9a826] text-2xl px-4 rounded-lg btn"><FaGithub /></button>
+                                <button onClick={handleGoogleLogin} className="bg-gray-700 text-white  text-2xl px-4 rounded-lg btn"><FaGoogle /></button>
+                                <button onClick={handleGithubLogin} className="bg-gray-700 text-white text-2xl px-4 rounded-lg btn"><FaGithub /></button>
                             </div>
                             <a href="#" className="mt-4 text-gray-600 font-bold">
                                 New here? <Link to='/register'>Register</Link>
                             </a>
                             <button
                                 type="submit"
-                                className="py-3 px-20 bg-[#f9a826] rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
+                                className="py-3 px-20 bg-gray-700 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
                             >
                                 Login
                             </button>

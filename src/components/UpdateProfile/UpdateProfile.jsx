@@ -10,7 +10,7 @@ import { MdAddAPhoto } from "react-icons/md";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import Loader from '../Loader/Loader';
-import {  FaUser } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 
 const pageVariants = {
     initial: {
@@ -94,10 +94,10 @@ const UpdateProfile = () => {
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center w-1/2">
                             <img src={infoHolder.photoURL} className="w-32 rounded-lg" />
                             <h2 className="my-8 font-play-fare font-bold text-3xl text-gray-800 text-center">
-                                update your profile <br /> <span className='text-[#f9a826]'>Here</span>
+                                update your profile <br /> <span className='text-gray-800'>Here</span>
                             </h2>
                             <div className="relative flex items-center">
-                                <FaUser />
+                                <FaUser className='text-xl font-bold text-black' />
                                 <input
                                     type="text"
                                     placeholder="Name" defaultValue={user.displayName}
@@ -107,7 +107,7 @@ const UpdateProfile = () => {
                                 {errors.name && <span className="text-red-500">This field is required</span>}
                             </div>
                             <div className="relative mt-8 flex items-center ">
-                                <MdAddAPhoto />
+                                <MdAddAPhoto className='text-xl font-bold text-black' />
                                 <input
                                     type="text"
                                     placeholder="photoURL" defaultValue={user.photoURL}
@@ -124,7 +124,7 @@ const UpdateProfile = () => {
                             </a>
                             <button
                                 type="submit"
-                                className="py-3 px-20 bg-[#f9a826] rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
+                                className="py-3 px-20 bg-gray-700 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
                             >
                                 Update
                             </button>

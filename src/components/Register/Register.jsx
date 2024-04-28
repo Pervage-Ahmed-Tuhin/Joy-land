@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import wave2 from '../../assets/img/Abstract Paper (2).svg';
 import unlock2 from '../../assets/img/undraw_unlock_re_a558.svg';
 import Marquee from "react-fast-marquee";
-import avatar1 from '../../assets/img/avatar.svg';
+import avatar1 from '../../assets/img/avatar1.svg';
 import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
@@ -81,13 +81,14 @@ const Register = () => {
 
         createUser(email, password)
             .then(() => {
-                setInfoHolder(data);
+
+
                 toast.success(`Welcome! To Joy Land`, { autoClose: 4000 });
                 setTimeout(() => {
 
                     UpdateUserProfile(name, photoURL)
                         .then(() => {
-
+                            setInfoHolder(data);
                             setLoading(false);
                             navigate('/')
                         })
@@ -132,7 +133,7 @@ const Register = () => {
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center w-1/2">
                             <img src={avatar1} className="w-32" />
                             <h2 className="my-8 font-play-fare font-bold text-3xl text-gray-800 text-center">
-                                Join the family of <br /> <span className='text-[#f9a826]'>Joy Land</span>
+                                Join the family of <br /> <span className='text-gray-800'>Joy Land</span>
                             </h2>
                             <div className="relative flex items-center">
                                 <input type="text" placeholder="Name" name="name"
@@ -165,7 +166,7 @@ const Register = () => {
                                     {...register("photoURL")} />
                             </div>
                             <a href="#" className="mt-4 text-gray-800 font-bold">Have an account? <Link to='/login'>Log In</Link></a>
-                            <button type="submit" className="py-3 px-20 bg-[#f9a826] rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500">Register</button>
+                            <button type="submit" className="py-3 px-20 bg-gray-700 rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500">Register</button>
                         </form>
 
                     </div>
