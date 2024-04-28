@@ -19,6 +19,7 @@ import Register from './components/Register/Register.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import UpdateProfile from './components/UpdateProfile/UpdateProfile.jsx';
 import ViewTouristSpotsDetails from './components/ToristSpots/ViewTouristSpotsDetails.jsx';
+import UpdateDataBase from './components/UpdateDataBase/UpdateDataBase.jsx';
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
         path: '/spotSectionDetails/:id',
         element: <PrivateRoute><ViewTouristSpotsDetails></ViewTouristSpotsDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/tourists/${params.id}`)
+      },
+      {
+        path: '/updateDataBase',
+        element: <PrivateRoute> <UpdateDataBase></UpdateDataBase></PrivateRoute>,
+        
       }
 
 

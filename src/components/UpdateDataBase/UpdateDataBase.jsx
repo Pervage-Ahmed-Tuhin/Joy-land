@@ -1,12 +1,8 @@
-
 import Swal from 'sweetalert2'
 import wave2 from '../../assets/img/Snow.svg';
 
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
-
-
-
 
 import Loader from "../Loader/Loader";
 import { useContext, useEffect, useState } from 'react';
@@ -33,7 +29,8 @@ const pageTransition = {
     ease: "easeInOut",
     duration: 0.9
 };
-const AddTouristSpot = () => {
+const UpdateDataBase = () => {
+
     const { user } = useContext(AuthContext);
     useEffect(() => {
         document.title = "Joy land|add Tourist page";
@@ -50,7 +47,7 @@ const AddTouristSpot = () => {
 
 
 
-    const handleAddition = (event) => {
+    const handleUpdate = (event) => {
         event.preventDefault();
         const form = event.target;
         const image = form.image.value;
@@ -70,33 +67,31 @@ const AddTouristSpot = () => {
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
         console.log(newSpot);
 
-        fetch('http://localhost:5000/tourists', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newSpot)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Spot Added Successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
-                    form.reset();
-                }
-            })
+        // fetch('http://localhost:5000/tourists', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(newSpot)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.insertedId) {
+        //             Swal.fire({
+        //                 title: 'Success!',
+        //                 text: 'Spot Added Successfully',
+        //                 icon: 'success',
+        //                 confirmButtonText: 'Cool'
+        //             })
+        //             form.reset();
+        //         }
+        //     })
+        // This part will be updated
 
     }
 
-
-
     return (
-
         <div className="max-w-6xl mx-auto font-play-fare">
             {loading && <Loader></Loader>}
             {!loading && (
@@ -109,11 +104,11 @@ const AddTouristSpot = () => {
                     transition={pageTransition}
                 >
                     <Marquee className="marquee w-full overflow-hidden" speed={200}>
-                        <h1 className="text-2xl md:text-3xl font-bold text-[#00BFA6]">🐱‍👤Add Your Spot!🐱‍👤</h1>
+                        <h1 className="text-2xl md:text-3xl font-bold text-[#00BFA6]">🐱‍👤Update Your Spot!🐱‍👤</h1>
                     </Marquee>
                     <div className=" p-24" style={{ backgroundImage: `url(${wave2})` }}>
-                        <h2 className="text-3xl font-extrabold text-white">Add Tourist Spots</h2>
-                        <form onSubmit={handleAddition} className="md:w-full">
+                        <h2 className="text-3xl font-extrabold text-white">Update Tourist Spots</h2>
+                        <form onSubmit={handleUpdate} className="md:w-full">
                             {/* form name and quantity row */}
                             <div className="grid md:grid-cols-2 gap-4 mb-8">
                                 <div className="form-control">
@@ -202,7 +197,7 @@ const AddTouristSpot = () => {
                                 rows="10"
                                 placeholder="Enter your text here..."
                             ></textarea>
-                            <input type="submit" value="Add Tourist Spot" className="btn btn-block " />
+                            <input type="submit" value="Update Tourist Spot" className="btn btn-block " />
                         </form>
 
 
@@ -212,10 +207,7 @@ const AddTouristSpot = () => {
 
 
         </div>
-
-
-
     );
 };
 
-export default AddTouristSpot;
+export default UpdateDataBase;
