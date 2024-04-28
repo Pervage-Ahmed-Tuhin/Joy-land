@@ -32,12 +32,21 @@ const Navbar = () => {
     const [theme, setTheme] = useState('light');
     const { user, LogOutUser } = useContext(AuthContext);
 
+    console.log(user);
+
+
+
     const links = <>
 
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/'>Home</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/allTourist'>All Tourists Spot</NavLink></li>
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/addTourist'>Add Tourists Spot</NavLink></li>
-        <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/myList'>MY List</NavLink></li>
+        {/* <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to={`/myList/${email}`}>MY List</NavLink></li> */}
+
+        <li className="font-play-fare text-xl text-[#00BFA6] font-semibold">
+            <NavLink to='/myList'>MY List</NavLink>
+        </li>
+
         <li className="font-play-fare text-xl text-[#00BFA6] font-semibold"> <NavLink to='/updateProfile'>Profile</NavLink></li>
 
 

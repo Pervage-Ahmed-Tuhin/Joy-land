@@ -12,14 +12,17 @@ const PrivateRoute = ({ children }) => {
         </div>
 
     }
-    // if (loader) {
-    //     return <span className="mt-[50%] md:mt-[40%] loading loading-spinner loading-lg text-2xl"></span>
-    // }
+
     if (!user) {
 
         return <Navigate state={location?.pathname || '/'} to="/login"></Navigate>
 
     }
+
+    // if (!user) {
+    //     return <Navigate to="/login" />;
+    // }
+
     return children;
 };
 

@@ -83,7 +83,8 @@ const AuthProvider = ({ children }) => {
         loginUser,
         GoogleLogin,
         GitHUbLogin,
-        infoHolder
+        infoHolder,
+        loader
     }
 
     return (

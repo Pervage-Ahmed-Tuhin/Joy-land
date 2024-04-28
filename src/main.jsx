@@ -43,8 +43,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <AddTouristSpot></AddTouristSpot></PrivateRoute>
       },
       {
-        path: '/myList',
-        element: <PrivateRoute><MyList></MyList></PrivateRoute>
+        // path: '/myList/:email',
+        path:'/myList',
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
+        // loader: ({ params }) => fetch(`http://localhost:5000/tourists/email/${params.email}`)
       },
       {
         path: '/login',
@@ -66,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: '/updateDataBase',
         element: <PrivateRoute> <UpdateDataBase></UpdateDataBase></PrivateRoute>,
-        
+
       }
 
 
