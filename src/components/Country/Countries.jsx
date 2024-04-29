@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import SingleCountry from "./SingleCountry";
+import { Link, useNavigate } from "react-router-dom";
 
 const Countries = () => {
 
+    const navigate = useNavigate();
     const [countries, setCountries] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/countries')
@@ -14,6 +16,13 @@ const Countries = () => {
 
             })
     }, [])
+
+
+
+    const handleSendingCountryName = countryName => {
+        console.log(countryName);
+        navigate(`/soloCountry/${countryName}`);
+    }
 
     console.log(countries);
     return (
@@ -43,7 +52,11 @@ const Countries = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {
-                    countries.map(country => <SingleCountry key={country._id} data={country}></SingleCountry>)
+                    countries.map(country => <SingleCountry key={country._id} data={country}
+
+                        handleSendingCountryName={handleSendingCountryName}
+
+                    ></SingleCountry>)
                 }
             </div>
 

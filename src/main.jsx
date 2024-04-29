@@ -20,6 +20,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import UpdateProfile from './components/UpdateProfile/UpdateProfile.jsx';
 import ViewTouristSpotsDetails from './components/ToristSpots/ViewTouristSpotsDetails.jsx';
 import UpdateDataBase from './components/UpdateDataBase/UpdateDataBase.jsx';
+import SoloCountry from './components/IsolatedCountry/SoloCountry.jsx';
 
 
 const router = createBrowserRouter([
@@ -71,7 +72,12 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/tourists/${params.id}`)
 
       },
-    
+      {
+        path: '/soloCountry/:countryName',
+        element: <SoloCountry></SoloCountry>,
+        loader: ({ params }) => fetch(`http://localhost:5000/tourists/country/${params.countryName}`)
+
+      }
 
 
     ]

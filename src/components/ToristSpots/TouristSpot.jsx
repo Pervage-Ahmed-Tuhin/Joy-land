@@ -16,6 +16,7 @@ const TouristSpot = ({ data }) => {
                         <p className="text-lg font-play-fare text-gray-500"><span>Total Visitor Per Year : {totalVisitorsPerYear} </span></p>
                         <p className="text-lg font-play-fare text-gray-500"><span>Seasonality: {seasonality} </span></p>
                         <p className="text-lg font-play-fare text-gray-500"><span>Travel Time: {travelTime} Days</span></p>
+                        <p className="text-lg font-play-fare text-gray-500"><span>Average Cost: {averageCost} $</span></p>
 
                     </div>
                     <Link to={`/spotSectionDetails/${_id}`}>
