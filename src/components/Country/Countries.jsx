@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import SingleCountry from "./SingleCountry";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Countries = () => {
 
@@ -17,6 +17,9 @@ const Countries = () => {
             })
     }, [])
 
+    useEffect(() => {
+        document.title = "Joy land|Countries";
+    }, [])
 
 
     const handleSendingCountryName = countryName => {

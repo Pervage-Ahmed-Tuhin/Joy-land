@@ -132,8 +132,8 @@ const Register = () => {
                         <img src={unlock2} className="hidden lg:block w-[30%] hover:scale-150 transition-all duration-500 transform mx-auto" />
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center w-1/2">
                             <img src={avatar1} className="w-32" />
-                            <h2 className="my-8 font-play-fare font-bold text-3xl text-gray-800 text-center">
-                                Join the family of <br /> <span className='text-gray-800'>Joy Land</span>
+                            <h2 className="my-8 font-play-fare font-bold text-xl md:text-3xl text-[#00BFA6] md:text-gray-800 text-center">
+                                Join the family of <br /> <span className='text-[#00BFA6] md:text-gray-800'>Joy Land</span>
                             </h2>
                             <div className="relative flex items-center">
                                 <input type="text" placeholder="Name" name="name"
@@ -147,7 +147,7 @@ const Register = () => {
                                     {...register("email", { required: true })} />
                                 {errors.email && <span className="text-red-500">This field is required</span>}
                             </div>
-                            <div className="relative mt-8 flex items-center ">
+                            <div className="relative mt-8 flex items-center ml-5 ">
                                 <input type={Type ? "text" : "password"} placeholder="Password" name="password"
                                     className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500 capitalize text-lg"
                                     {...register("password", { required: true })} />
@@ -155,7 +155,7 @@ const Register = () => {
                                 <span onClick={() => setType(!Type)}>
 
                                     {
-                                        Type ? <IoIosEye className="text-2xl relative left-[88%] md:left-[92%] bottom-1" /> : <FaRegEyeSlash className="text-2xl relative left-[88%] md:left-[92%] bottom-1" />
+                                        Type ? <IoIosEye className="text-2xl relative left-[88%] md:left-[92%] bottom-1" /> : <FaRegEyeSlash className="text-lg md:text-2xl relative left-[88%] md:left-[88%] bottom-1" />
                                     }
 
                                 </span>

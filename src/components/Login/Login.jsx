@@ -130,8 +130,8 @@ const Login = () => {
                         <img src={unlock2} className="hidden lg:block w-1/2 hover:scale-150 transition-all duration-500 transform mx-auto" />
                         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center w-1/2">
                             <img src={avatar1} className="w-32" />
-                            <h2 className="my-8 font-play-fare font-bold text-3xl text-gray-800 text-center">
-                                Welcome to <br /> <span className='text-gray-800'>Joy Land</span>
+                            <h2 className="my-8 font-play-fare font-bold text-3xl text-[#00BFA6] md:text-gray-800 text-center">
+                                Welcome to <br /> <span className='text-[#00BFA6] md:text-gray-800'>Joy Land</span>
                             </h2>
                             <div className="relative flex items-center">
                                 <FaUser />
