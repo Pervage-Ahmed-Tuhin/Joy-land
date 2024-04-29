@@ -32,12 +32,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/tourists')
+        loader: () => fetch('https://tourism-management-server-one.vercel.app/tourists')
       },
       {
         path: '/allTourist',
         element: <AllTourist></AllTourist>,
-        loader: () => fetch('http://localhost:5000/tourists')
+        loader: () => fetch('https://tourism-management-server-one.vercel.app/tourists')
       },
       {
         path: '/addTourist',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         // path: '/myList/:email',
         path: '/myList',
         element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-        // loader: ({ params }) => fetch(`http://localhost:5000/tourists/email/${params.email}`)
+        // loader: ({ params }) => fetch(` https://tourism-management-server-one.vercel.app/tourists/email/${params.email}`)
       },
       {
         path: '/login',
@@ -64,18 +64,18 @@ const router = createBrowserRouter([
       {
         path: '/spotSectionDetails/:id',
         element: <PrivateRoute><ViewTouristSpotsDetails></ViewTouristSpotsDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/tourists/${params.id}`)
+        loader: ({ params }) => fetch(`https://tourism-management-server-one.vercel.app/tourists/${params.id}`)
       },
       {
         path: '/updateDataBase/:id',
         element: <PrivateRoute> <UpdateDataBase></UpdateDataBase></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/tourists/${params.id}`)
+        loader: ({ params }) => fetch(`https://tourism-management-server-one.vercel.app/tourists/${params.id}`)
 
       },
       {
         path: '/soloCountry/:countryName',
         element: <SoloCountry></SoloCountry>,
-        loader: ({ params }) => fetch(`http://localhost:5000/tourists/country/${params.countryName}`)
+        loader: ({ params }) => fetch(`https://tourism-management-server-one.vercel.app/tourists/country/${params.countryName}`)
 
       }
 

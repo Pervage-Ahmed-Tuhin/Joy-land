@@ -70,7 +70,7 @@ const AddTouristSpot = () => {
         // console.log(image, touristsSpotName, countryName, location, averageCost, seasonality, travelTime, totalVisitorsPerYear, textarea);
         console.log(newSpot);
 
-        fetch('http://localhost:5000/tourists', {
+        fetch('https://tourism-management-server-one.vercel.app/tourists', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

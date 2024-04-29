@@ -8,7 +8,7 @@ const Countries = () => {
     const navigate = useNavigate();
     const [countries, setCountries] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/countries')
+        fetch('https://tourism-management-server-one.vercel.app/countries')
             .then(res => res.json())
             .then(data => {
 

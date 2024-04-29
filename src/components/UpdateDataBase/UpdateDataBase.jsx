@@ -76,7 +76,7 @@ const UpdateDataBase = () => {
         console.log(updatedSpot);
 
 
-        fetch(`http://localhost:5000/tourists/${id}`, {
+        fetch(`https://tourism-management-server-one.vercel.app/tourists/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
