@@ -70,7 +70,8 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <UpdateDataBase></UpdateDataBase></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/tourists/${params.id}`)
 
-      }
+      },
+    
 
 
     ]

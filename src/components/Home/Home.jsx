@@ -9,6 +9,7 @@ import Questions from "../FreqentlyAskedQuestions/Questions";
 import HappyClients from "../HappyClients/HappyClients";
 import { Typewriter } from "react-simple-typewriter";
 import OurTeam from "../OurTeam/OurTeam";
+import Countries from "../Country/Countries";
 const pageVariants = {
     initial: {
         opacity: 0,
@@ -99,6 +100,7 @@ const Home = () => {
 
 
                         </div>
+                        <Countries></Countries>
                         <Questions></Questions>
 
                         <HappyClients></HappyClients>
