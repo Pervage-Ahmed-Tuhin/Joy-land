@@ -143,13 +143,13 @@ const Register = () => {
                             </div>
                             <div className="relative mt-8 flex items-center ">
                                 <input type="email" placeholder="Email" name="email"
-                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500 capitalize text-lg"
+                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500 text-lg"
                                     {...register("email", { required: true })} />
                                 {errors.email && <span className="text-red-500">This field is required</span>}
                             </div>
                             <div className="relative mt-8 flex items-center ml-5 ">
                                 <input type={Type ? "text" : "password"} placeholder="Password" name="password"
-                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500 capitalize text-lg"
+                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500  text-lg"
                                     {...register("password", { required: true })} />
                                 {errors.password && <span className="text-red-500">This field is required</span>}
                                 <span onClick={() => setType(!Type)}>

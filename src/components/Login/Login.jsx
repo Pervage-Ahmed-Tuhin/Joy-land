@@ -139,7 +139,7 @@ const Login = () => {
                                     type="email"
                                     placeholder="Email"
                                     {...register("email", { required: true })}
-                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6]transition-all duration-500 capitalize text-lg"
+                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6]transition-all duration-500 text-lg"
                                 />
                                 {errors.email && <span className="text-red-500">This field is required</span>}
                             </div>
@@ -149,7 +149,7 @@ const Login = () => {
                                     type="password"
                                     placeholder="Password"
                                     {...register("password", { required: true })}
-                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500 capitalize text-lg"
+                                    className="pl-8 border-b-2 font-play-fare focus:outline-none focus:border-[#00BFA6] transition-all duration-500  text-lg"
                                 />
                                 {errors.password && <span className="text-red-500">This field is required</span>}
                             </div>
