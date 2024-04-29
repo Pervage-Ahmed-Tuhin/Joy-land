@@ -51,7 +51,7 @@ const ErrorPage = () => {
                         <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
                             <span className="text-[#00BFA6]">Error 404</span>
                         </h2>
-                        <p className="text-2xl font-play-fare font-semibold md:text-3xl">Sorry, we couldnt find this page.</p>
+                        <p className="text-2xl font-play-fare font-semibold md:text-3xl">Sorry, we could not find this page.</p>
                         <p className="mt-4 mb-8 dark:text-gray-400">But do not worry, you can find plenty of other things on our homepage.</p>
                         <Link> <button className="btn bg-[#00BFA6] text-white">Go TO Home</button></Link>
                     </div>
