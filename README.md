@@ -2,6 +2,9 @@
 
 ## Tourism Management Website
 
+### About:
+This website provides a platform for managing and exploring tourist spots, facilitating seamless planning and discovery of travel destinations. With features like adding, updating, and deleting spots, users have the flexibility to customize their travel experiences while ensuring accurate and relevant information. Whether you're a traveler looking for new adventures or a tourism enthusiast wanting to contribute to the community, this website offers a user-friendly interface to engage with and explore the world of tourism.
+
 **Live Site URL:** [Tourism Management Website](https://tourism-management-websi-84dfd.web.app/)
 
 ---
@@ -27,9 +30,12 @@
    - Keep track of the tourist spots you've added to the platform, making it easy to revisit or share with others.
 
 ---
+### Technologies Used :
+Frontend: React.js, React Router, Tailwind CSS, Mamba UI
+Backend: Node.js, Express.js, Firebase MongoDB
+Authentication: JWT Tokens, Firebase Authentication
 
-### About:
-This website provides a platform for managing and exploring tourist spots, facilitating seamless planning and discovery of travel destinations. With features like adding, updating, and deleting spots, users have the flexibility to customize their travel experiences while ensuring accurate and relevant information. Whether you're a traveler looking for new adventures or a tourism enthusiast wanting to contribute to the community, this website offers a user-friendly interface to engage with and explore the world of tourism.
+
 
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
