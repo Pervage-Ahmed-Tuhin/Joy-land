@@ -1,7 +1,4 @@
 # Website Name : Joy land
-# category name: B9 A10 Type-01 Requirements
-
----
 
 ## Tourism Management Website
 
