@@ -36,6 +36,13 @@ Backend: Node.js, Express.js, Firebase MongoDB
 Authentication: JWT Tokens, Firebase Authentication
 
 
+## Getting Started
+
+1. Clone the repository: `git clone <repository-url>`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
+
+
 
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
